@@ -26,6 +26,7 @@ credentials_for_provider:
     help:
       en_US: The store ID is the part after store/ in the browser URL after entering the store backend
       zh_Hans: 进入店铺后台后浏览器网址中的store/后面的部分就是店铺ID
+    url: https://github.com/chekun/dify-plugin-shopify/blob/main/README.md
   shopify_app_password:
     type: secret-input
     required: true
@@ -38,7 +39,7 @@ credentials_for_provider:
     help:
       en_US: Get the app API access token from the Shopify store backend
       zh_Hans: 从Shopify店铺后台获取应用API访问令牌
-    url: https://admin.shopify.com/
+    url: https://github.com/chekun/dify-plugin-shopify/blob/main/README.md
 extra:
   python:
     source: provider/shopify.py
