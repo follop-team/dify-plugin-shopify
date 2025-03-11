@@ -1,5 +1,7 @@
 # Shopify
 
+[Project Repo](https://github.com/chekun/dify-plugin-shopify)
+
 ## Overview
 
 A tool in Dify that helps you interact with Shopify store data 🔧

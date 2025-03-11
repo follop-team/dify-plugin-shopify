@@ -1,5 +1,7 @@
 # Shopify
 
+[项目地址](https://github.com/chekun/dify-plugin-shopify)
+
 ## 概述
 
 在Dify中可以帮你交互Shopify店铺数据的工具🔧
