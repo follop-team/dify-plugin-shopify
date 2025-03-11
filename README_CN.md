@@ -20,21 +20,21 @@
 
 > 如果已经存在店铺APP，可以跳过，也可以创建一个新的。
 
-![](./_assets/screenshots/app_1.PNG)
+![](./_assets/screenshots/app_1.png)
 
-![](./_assets/screenshots/app_2.PNG)
+![](./_assets/screenshots/app_2.png)
 
-![](./_assets/screenshots/app_3.PNG)
+![](./_assets/screenshots/app_3.png)
 
-![](./_assets/screenshots/app_4.PNG)
+![](./_assets/screenshots/app_4.png)
 
-![](./_assets/screenshots/app_5.PNG)
+![](./_assets/screenshots/app_5.png)
 
 > 设置访问范围的时候，只需要选择必要的权限即可，比如目前仅需给出读取产品的权限。
 
-![](./_assets/screenshots/app_6.PNG)
+![](./_assets/screenshots/app_6.png)
 
-![](./_assets/screenshots/app_7.PNG)
+![](./_assets/screenshots/app_7.png)
 
 ### 3. 将店铺ID和访问令牌填入Dify
 

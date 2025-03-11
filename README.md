@@ -20,21 +20,21 @@ After logging into the Shopify admin panel, the store ID is the part shown in th
 
 > If you already have a store app, you can skip this step or create a new one.
 
-![](./_assets/screenshots/app_1.PNG)
+![](./_assets/screenshots/app_1.png)
 
-![](./_assets/screenshots/app_2.PNG)
+![](./_assets/screenshots/app_2.png)
 
-![](./_assets/screenshots/app_3.PNG)
+![](./_assets/screenshots/app_3.png)
 
-![](./_assets/screenshots/app_4.PNG)
+![](./_assets/screenshots/app_4.png)
 
-![](./_assets/screenshots/app_5.PNG)
+![](./_assets/screenshots/app_5.png)
 
 > When setting access scopes, only select necessary permissions, such as read access to products for now.
 
-![](./_assets/screenshots/app_6.PNG)
+![](./_assets/screenshots/app_6.png)
 
-![](./_assets/screenshots/app_7.PNG)
+![](./_assets/screenshots/app_7.png)
 
 ### 3. Enter Store ID and Access Token in Dify
 
