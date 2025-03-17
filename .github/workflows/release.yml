@@ -8,7 +8,7 @@ jobs:
   package-and-release:
     defaults:
       run:
-        working-directory: ./app
+        working-directory: ./
     runs-on: ${{ matrix.platform == 'linux/arm64' && 'arm64_runner' || 'ubuntu-latest' }}
     if: github.repository == 'chekun/dify-plugin-shopify'
     strategy:
