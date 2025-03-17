@@ -1,0 +1,36 @@
+name: Build and Release Dify Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  package-and-release:
+    runs-on: arm64_runner
+    if: github.repository == 'chekun/dify-plugin-shopify'
+    strategy:
+      matrix:
+        include:
+          - platform: linux/arm64
+
+    steps:
+    - name: Download dify
+      run: |
+        curl -L -o dify "https://github.com/langgenius/dify-plugin-daemon/releases/download/0.0.4/dify-plugin-linux-arm64"
+        chmod +x dify
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        path: shopify
+
+    - name: Package plugin
+      run: |
+        ./dify plugin package shopify
+        mv shopify.difypkg shopify.${{ github.event.release.tag_name }}.difypkg
+
+    - name: Upload Release Asset
+      run: |
+        gh release upload ${{ github.event.release.tag_name }} shopify.${{ github.event.release.tag_name }}.difypkg --clobber
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
