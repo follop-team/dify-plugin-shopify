@@ -1,51 +1,53 @@
 # Shopify
 
-[Project Repo](https://github.com/chekun/dify-plugin-shopify)
+[项目代码地址](https://github.com/chekun/dify-plugin-shopify)
 
-## Overview
+## 概述
 
-A tool in Dify that helps you interact with Shopify store data 🔧
+在Dify中可以帮你交互Shopify店铺数据的工具🔧
 
-## Implemented Tools
+## 已实现的工具
   
-  - Query product information from your store
+  - 查询产品店铺产品信息
 
-## Configuration
+## 配置
 
-### 1. Get Store ID
+### 1. 获取店铺ID
 
-After logging into the Shopify admin panel, the store ID is the part shown in the URL as illustrated below.
+登录Shopify后台，网址中如下图所示的部分，即为店铺ID.
 
-![](./_assets/screenshots/store_id.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/store_id.png?raw=true)
 
-### 2. Create Store App and Get Admin API Access Token
+### 2. 创建店铺APP并获取后台 API 访问令牌
 
-> If you already have a store app, you can skip this step or create a new one.
+> 如果已经存在店铺APP，可以跳过，也可以创建一个新的。
 
-![](./_assets/screenshots/app_1.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_1.png?raw=true)
 
-![](./_assets/screenshots/app_2.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_2.png?raw=true)
 
-![](./_assets/screenshots/app_3.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_3.png?raw=true)
 
-![](./_assets/screenshots/app_4.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_4.png?raw=true)
 
-![](./_assets/screenshots/app_5.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_5.png?raw=true)
 
-> When setting access scopes, only select necessary permissions, such as read access to products for now.
+> 设置访问范围的时候，只需要选择必要的权限即可，比如目前仅需给出读取产品的权限。
 
-![](./_assets/screenshots/app_6.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_6.png?raw=true)
 
-![](./_assets/screenshots/app_7.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_7.png?raw=true)
 
-### 3. Enter Store ID and Access Token in Dify
+### 3. 将店铺ID和访问令牌填入Dify
 
-Click on plugins, click on the Shopify tool, then click on set authorization.
+点击插件，点击工具 Shopify , 点击设置授权。
 
-![](./_assets/screenshots/auth.png)
+![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/auth.png?raw=true)
 
-### 4. Using the Tool
+### 4. 使用工具
 
-Use according to your needs
+按照自己的需求使用即可
 
-> For example, you can have AI analyze your product icons, product titles and descriptions, and whether product prices can be optimized, etc.
+> 举个例子，可以让AI分析你的产品图标，产品标题和文案，产品价格 是否可以优化等。
+
+如果您有额外的数据需求，可以在项目中发起[issue]((https://github.com/chekun/dify-plugin-shopify))。
