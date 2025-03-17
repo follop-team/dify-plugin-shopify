@@ -107,4 +107,4 @@ Example response for querying product information:
 
 You can use transformation nodes to extract or integrate the data needed for the next process node.
 
-If you have additional data needs, you can [create an issue]((https://github.com/chekun/dify-plugin-shopify)) in the project.
+If you have additional data needs, you can [create an issue](https://github.com/chekun/dify-plugin-shopify) in the project.

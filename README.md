@@ -107,4 +107,4 @@
 
 可以使用转换节点来提取或整合下一流程节点需要的数据。
 
-如果您有额外的数据需求，可以在项目中发起[issue]((https://github.com/chekun/dify-plugin-shopify))。
+如果您有额外的数据需求，可以在项目中发起[issue](https://github.com/chekun/dify-plugin-shopify)。
