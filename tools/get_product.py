@@ -34,6 +34,16 @@ query ($identifier: ProductIdentifierInput!) {
         }
       }
     }
+    media(first: 30) {
+      nodes {
+        mediaContentType
+        preview {
+          image {
+            url
+          }
+        }
+      }
+    }
     variants(first: 30)  {
       nodes{
         displayName
@@ -87,4 +97,5 @@ class ShopifyGetProductTool(Tool):
 
         product = r["data"]["product"]
         product["variants"] = product["variants"]["nodes"]
+        product["media"] = product["media"]["nodes"]
         yield self.create_json_message(product)
