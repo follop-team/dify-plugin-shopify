@@ -50,4 +50,61 @@ Use according to your needs
 
 > For example, you can have AI analyze your product icons, product titles and descriptions, and whether product prices can be optimized, etc.
 
+Example response for querying product information:
+
+```json
+{
+    "text": "",
+    "files": [],
+    "json": [
+        {
+            "createdAt": "2023-07-01T05:54:08Z",
+            "description": "this is description",
+            "descriptionHtml": "<p>this is <strong>description</strong></p>",
+            "featuredMedia": {
+                "preview": {
+                    "image": {
+                        "url": "https://cdn.shopify.com/s/files/1/0784/6720/3389/products/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg?v=1688190848"
+                    }
+                }
+            },
+            "handle": "the-collection-snowboard-liquid",
+            "media": [
+                {
+                    "mediaContentType": "IMAGE",
+                    "preview": {
+                        "image": {
+                            "url": "https://cdn.shopify.com/s/files/1/0784/6720/3389/products/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg?v=1688190848"
+                        }
+                    }
+                }
+            ],
+            "onlineStoreUrl": null,
+            "priceRangeV2": {
+                "maxVariantPrice": {
+                    "amount": "749.95",
+                    "currencyCode": "CNY"
+                },
+                "minVariantPrice": {
+                    "amount": "749.95",
+                    "currencyCode": "CNY"
+                }
+            },
+            "status": "ACTIVE",
+            "title": "The Collection Snowboard: Liquid",
+            "updatedAt": "2025-03-17T08:31:13Z",
+            "variants": [
+                {
+                    "displayName": "The Collection Snowboard: Liquid - Default Title",
+                    "image": null,
+                    "price": "749.95"
+                }
+            ]
+        }
+    ]
+}
+```
+
+You can use transformation nodes to extract or integrate the data needed for the next process node.
+
 If you have additional data needs, you can [create an issue]((https://github.com/chekun/dify-plugin-shopify)) in the project.
