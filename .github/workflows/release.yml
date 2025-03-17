@@ -12,7 +12,6 @@ jobs:
       matrix:
         include:
           - platform: linux/amd64
-          - platform: linux/arm64
 
     steps:
     - name: Download dify
