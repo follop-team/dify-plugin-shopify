@@ -93,7 +93,7 @@ class ShopifyGetProductTool(Tool):
             raise Exception(f"Error: {r['errors']}")
         
         if not r["data"]["product"]:
-            raise Exception(f"Product not found")
+            raise Exception(f"Product not found, {r}")
 
         product = r["data"]["product"]
         product["variants"] = product["variants"]["nodes"]
