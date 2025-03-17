@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Download dify
       run: |
-        curl -L -o dify "https://github.com/langgenius/dify-plugin-daemon/releases/download/0.0.4/dify-plugin-linux-${{ matrix.platform }}"
+        curl -L -o dify "https://github.com/langgenius/dify-plugin-daemon/releases/download/0.0.4/dify-plugin-linux-amd64"
         chmod +x dify
 
     - name: Checkout repository
