@@ -33,8 +33,10 @@ jobs:
         mv shopify.difypkg shopify.${{ github.event.release.tag_name }}.difypkg
 
     - name: Upload Release Asset
-      run: |
-        cd shopify
-        gh release upload ${{ github.event.release.tag_name }} ../shopify.${{ github.event.release.tag_name }}.difypkg --clobber
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" \
+          -H "Content-Type: $(file -b --mime-type shopify.${{ github.event.release.tag_name }}.difypkg)" \
+          --data-binary "@shopify.${{ github.event.release.tag_name }}.difypkg" \
+          "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ github.event.release.id }}/assets?name=$(basename shopify.${{ github.event.release.tag_name }}.difypkg)"
