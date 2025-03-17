@@ -176,3 +176,6 @@ cython_debug/
 
 # Windows
 Thumbs.db
+
+_assets/screenshots/
+.github/
