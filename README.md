@@ -1,26 +1,24 @@
-# Shopify
+# Shopify Dify プラグイン
 
-[项目代码地址](https://github.com/chekun/dify-plugin-shopify)
+## 概要
 
-## 概述
+Dify で Shopify の店舗データと対話できるツール🔧
 
-在Dify中可以帮你交互Shopify店铺数据的工具🔧
+## 実装済みのツール
 
-## 已实现的工具
-  
-  - 查询产品店铺产品信息
+- 店舗の製品情報を問い合わせる機能
 
-## 配置
+## 設定方法
 
-### 1. 获取店铺ID
+### 1. 店舗IDの取得
 
-登录Shopify后台，网址中如下图所示的部分，即为店铺ID.
+Shopifyの管理画面にログインし、URLの中に表示されている以下の部分が店舗IDです。
 
 ![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/store_id.png?raw=true)
 
-### 2. 创建店铺APP并获取后台 API 访问令牌
+### 2. 店舗アプリを作成し、管理APIのアクセストークンを取得
 
-> 如果已经存在店铺APP，可以跳过，也可以创建一个新的。
+> すでに店舗アプリが存在する場合は、この手順をスキップしてもOKです。新しく作成しても構いません。
 
 ![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_1.png?raw=true)
 
@@ -32,79 +30,83 @@
 
 ![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_5.png?raw=true)
 
-> 设置访问范围的时候，只需要选择必要的权限即可，比如目前仅需给出读取产品的权限。
+> アクセス権限を設定する際は、必要な権限のみを選択すればOKです。たとえば現在は「商品情報の読み取り」だけで十分です。
 
 ![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_6.png?raw=true)
 
 ![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/app_7.png?raw=true)
 
-### 3. 将店铺ID和访问令牌填入Dify
+### 3. 店舗IDとアクセストークンをDifyに入力
 
-点击插件，点击工具 Shopify , 点击设置授权。
+プラグインをクリックし、「Shopify」ツールを選択して「設定」→「認証」をクリックします。
 
 ![](https://github.com/chekun/dify-plugin-shopify/blob/main/_assets/screenshots/auth.png?raw=true)
 
-### 4. 使用工具
+### 4. ツールの使用
 
-按照自己的需求使用即可
+必要に応じて自由に使用できます。
 
-> 举个例子，可以让AI分析你的产品图标，产品标题和文案，产品价格 是否可以优化等。
+> 例：AIに製品画像、タイトル、説明文、価格などを分析させて、改善の余地があるかをチェックすることも可能です。
 
-查询产品信息返回示例：
+#### 製品情報を問い合わせた場合の返却例：
 
 ```json
 {
-    "text": "",
-    "files": [],
-    "json": [
-        {
-            "createdAt": "2023-07-01T05:54:08Z",
-            "description": "this is description",
-            "descriptionHtml": "<p>this is <strong>description</strong></p>",
-            "featuredMedia": {
-                "preview": {
-                    "image": {
-                        "url": "https://cdn.shopify.com/s/files/1/0784/6720/3389/products/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg?v=1688190848"
-                    }
-                }
-            },
-            "handle": "the-collection-snowboard-liquid",
-            "media": [
-                {
-                    "mediaContentType": "IMAGE",
-                    "preview": {
-                        "image": {
-                            "url": "https://cdn.shopify.com/s/files/1/0784/6720/3389/products/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg?v=1688190848"
-                        }
-                    }
-                }
-            ],
-            "onlineStoreUrl": null,
-            "priceRangeV2": {
-                "maxVariantPrice": {
-                    "amount": "749.95",
-                    "currencyCode": "CNY"
-                },
-                "minVariantPrice": {
-                    "amount": "749.95",
-                    "currencyCode": "CNY"
-                }
-            },
-            "status": "ACTIVE",
-            "title": "The Collection Snowboard: Liquid",
-            "updatedAt": "2025-03-17T08:31:13Z",
-            "variants": [
-                {
-                    "displayName": "The Collection Snowboard: Liquid - Default Title",
-                    "image": null,
-                    "price": "749.95"
-                }
-            ]
+  "text": "",
+  "files": [],
+  "json": [
+    {
+      "createdAt": "2023-07-01T05:54:08Z",
+      "description": "this is description",
+      "descriptionHtml": "<p>this is <strong>description</strong></p>",
+      "featuredMedia": {
+        "preview": {
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0784/6720/3389/products/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg?v=1688190848"
+          }
         }
-    ]
+      },
+      "handle": "the-collection-snowboard-liquid",
+      "media": [
+        {
+          "mediaContentType": "IMAGE",
+          "preview": {
+            "image": {
+              "url": "https://cdn.shopify.com/s/files/1/0784/6720/3389/products/Main_b13ad453-477c-4ed1-9b43-81f3345adfd6.jpg?v=1688190848"
+            }
+          }
+        }
+      ],
+      "onlineStoreUrl": null,
+      "priceRangeV2": {
+        "maxVariantPrice": {
+          "amount": "749.95",
+          "currencyCode": "CNY"
+        },
+        "minVariantPrice": {
+          "amount": "749.95",
+          "currencyCode": "CNY"
+        }
+      },
+      "status": "ACTIVE",
+      "title": "The Collection Snowboard: Liquid",
+      "updatedAt": "2025-03-17T08:31:13Z",
+      "variants": [
+        {
+          "displayName": "The Collection Snowboard: Liquid - Default Title",
+          "image": null,
+          "price": "749.95"
+        }
+      ]
+    }
+  ]
 }
 ```
 
-可以使用转换节点来提取或整合下一流程节点需要的数据。
+次のプロセスステップで必要なデータを抽出または統合するには、データ変換ノードを使用してください。
 
-如果您有额外的数据需求，可以在项目中发起[issue](https://github.com/chekun/dify-plugin-shopify)。
+追加のデータニーズがある場合は、[Issueをプロジェクトに提出](https://github.com/chekun/dify-plugin-shopify)してください。
+
+---
+
+翻訳や表現を少しカスタマイズしたい場合は、気軽に言ってくださいね。
