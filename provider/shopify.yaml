@@ -1,5 +1,5 @@
 identity:
-  author: chekun
+  author: y.morimoto
   name: shopify
   label:
     en_US: Shopify
@@ -27,14 +27,14 @@ credentials_for_provider:
       en_US: The store ID is the part after store/ in the browser URL after entering the store backend
       zh_Hans: 进入店铺后台后浏览器网址中的store/后面的部分就是店铺ID
     url: https://github.com/chekun/dify-plugin-shopify/blob/main/README.md
-  shopify_app_password:
+  shopify_storefront_access_token:
     type: secret-input
     required: true
     label:
-      en_US: APP API Password
+      en_US: shopify_storefront_access_token
       zh_Hans: 应用API访问令牌
     placeholder:
-      en_US: Please input your store app API password
+      en_US: Please input your shopify_storefront_access_token
       zh_Hans: 请输入您店铺应用API访问令牌
     help:
       en_US: Get the app API access token from the Shopify store backend

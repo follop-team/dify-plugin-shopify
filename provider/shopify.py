@@ -9,12 +9,12 @@ class ShopifyProvider(ToolProvider):
     def _validate_credentials(self, credentials: dict[str, Any]) -> None:
         try:
             store_id = credentials.get("shopify_store_id")
-            password = credentials.get("shopify_app_password")
+            access_token = credentials.get("shopify_storefront_access_token")
             res = post(
-                f"https://{store_id}.myshopify.com/admin/api/unstable/graphql.json",
+                f"https://{store_id}.myshopify.com/api/unstable/graphql.json",
                 json={"query": "{ __type(name: \"App\") { name } }"},
                 headers={
-                    "X-Shopify-Access-Token": password,
+                    "X-Shopify-Storefront-Access-Token": access_token,
                     "Content-Type": "application/json",
                 },
             )

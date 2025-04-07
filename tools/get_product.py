@@ -1,55 +1,25 @@
 from collections.abc import Generator
 from typing import Any
 
-from requests import post
+import requests
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
 product_query = """
-query ($identifier: ProductIdentifierInput!) {
-  product: productByIdentifier(identifier: $identifier) {
-    handle
-    title
-    descriptionHtml
-    description
-    createdAt
-    updatedAt
-    onlineStoreUrl
-    status
-    priceRangeV2 {
-      maxVariantPrice {
-        amount
-        currencyCode
-      }
-      minVariantPrice {
-        amount
-        currencyCode
-      }
-    }
-    featuredMedia {
-      preview {
-        image {
-          url
-        }
-      }
-    }
-    media(first: 30) {
-      nodes {
-        mediaContentType
-        preview {
-          image {
-            url
+query searchProducts($query: String!, $first: Int) {
+  search(query: $query, first: $first, types: PRODUCT) {
+    edges {
+      node {
+        ... on Product {
+          id
+          title
+          description
+          createdAt
+          updatedAt
+          featuredImage {
+            src
           }
-        }
-      }
-    }
-    variants(first: 30)  {
-      nodes{
-        displayName
-        price
-        image {
-          url
         }
       }
     }
@@ -63,39 +33,33 @@ class ShopifyGetProductTool(Tool):
         store_id = self.runtime.credentials.get("shopify_store_id")
         if not store_id:
             raise Exception("shopify_store_id is required")
-        password = self.runtime.credentials.get("shopify_app_password")
-        if not password:
-            raise Exception("shopify_app_password is required")
-        
-        indentifier = tool_parameters.get("identifier")
-        if not indentifier:
-            raise Exception("identifier is required")
-        
-        is_id_identifier = str(indentifier).isdigit()
+        access_token = self.runtime.credentials.get("shopify_storefront_access_token")
+        if not access_token:
+            raise Exception("shopify_storefront_access_token is required")
 
-        res = post(
-            f"https://{store_id}.myshopify.com/admin/api/unstable/graphql.json",
+        query = tool_parameters.get("query")
+        if not query:
+            raise Exception("query is required")
+
+        res = requests.post(
+            f"https://{store_id}.myshopify.com/api/unstable/graphql.json",
             json={
             "query": product_query,
             "variables": {
-                "identifier": {
-                    "id" if is_id_identifier else "handle": "gid://shopify/Product/"+indentifier if is_id_identifier else indentifier
-                }
+                "query": query
             }
             },
             headers={
-            "X-Shopify-Access-Token": password,
+            "X-Shopify-Storefront-Access-Token": access_token,
             "Content-Type": "application/json",
             },
         )
         r = res.json()
         if "errors" in r:
             raise Exception(f"Error: {r['errors']}")
-        
-        if not r["data"]["product"]:
+
+        if not r["data"]["search"]["edges"]:
             raise Exception(f"Product not found, {r}")
 
-        product = r["data"]["product"]
-        product["variants"] = product["variants"]["nodes"]
-        product["media"] = product["media"]["nodes"]
+        product = r["data"]["search"]["edges"]
         yield self.create_json_message(product)
