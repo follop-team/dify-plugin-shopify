@@ -3,15 +3,11 @@ type: plugin
 author: chekun
 name: shopify
 label:
-  en_US: Shopify
-  ja_JP: Shopify
-  zh_Hans: Shopify
-  pt_BR: Shopify
+  en_US: Dify Shopify
+  ja_JP: Dify Shopify
 description:
   en_US: A collection of tools to interact with your Shopify Store.
   ja_JP: Shopifyストアとのやり取りに使用するツールのコレクション.
-  zh_Hans: 用于和您的Shopify店铺数据交互的工具.
-  pt_BR: Uma coleção de ferramentas para interagir com sua loja Shopify.
 icon: icon.svg
 tags:
   - productivity

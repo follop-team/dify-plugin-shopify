@@ -3,14 +3,11 @@ identity:
   author: y.morimoto
   label:
     en_US: Get Product Information
-    zh_Hans: 获取产品信息
     ja_JP: 製品情報の取得
-    pt_BR: Obter informações do produto
 description:
   human:
-    en_US: Get product information by product ID or product handle.
-    zh_Hans: 根据产品ID或产品handle获取产品信息.
-    pt_BR: Obtenha informações do produto por ID do produto ou handle do produto.
+    en_US: Search for products by partial match of product name.
+    ja_JP: 製品を製品名で部分一致検索を行います。
   llm: 製品情報を製品名を指定して検索します。
 parameters:
   - name: query
@@ -20,6 +17,7 @@ parameters:
       en_US: Query
     human_description:
       ja_JP: 製品を製品名で部分一致検索を行います。
+      en_US: Search for products by partial match of product name.
     llm_description: 製品名の検索ワード
     form: llm
 extra:
