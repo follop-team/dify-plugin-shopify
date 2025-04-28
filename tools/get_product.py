@@ -15,6 +15,7 @@ query searchProducts($query: String!, $first: Int) {
           id
           title
           description
+          onlineStoreUrl
           totalInventory
           createdAt
           updatedAt
