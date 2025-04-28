@@ -46,7 +46,7 @@ class ShopifyGetProductTool(Tool):
             raise Exception("query is required")
 
         res = requests.post(
-            f"https://{store_id}.myshopify.com/api/unstable/graphql.json",
+            f"https://{store_id}.myshopify.com/api/2025-07/graphql.json",
             json={
             "query": product_query,
             "variables": {
@@ -55,9 +55,10 @@ class ShopifyGetProductTool(Tool):
             }
             },
             headers={
-            "X-Shopify-Storefront-Access-Token": access_token,
-            "Content-Type": "application/json",
+              "X-Shopify-Storefront-Access-Token": access_token,
+              "Content-Type": "application/json",
             },
+            verify=False
         )
         r = res.json()
         if "errors" in r:
