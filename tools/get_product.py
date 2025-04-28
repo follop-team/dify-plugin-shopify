@@ -32,13 +32,12 @@ query searchProducts($query: String!, $first: Int) {
 class ShopifyGetProductTool(Tool):
 
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
-        # FIXME: UIから設定できるようにする
         store_id = self.runtime.credentials.get("shopify_store_id")
-        # store_id = "timon-dev"
+
         if not store_id:
             raise Exception("shopify_store_id is required")
         access_token = self.runtime.credentials.get("shopify_storefront_access_token")
-        # access_token = "0bab106ddb2760096129a2843a386722"
+
         if not access_token:
             raise Exception("shopify_storefront_access_token is required")
 
