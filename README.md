@@ -36,3 +36,9 @@ python -m main
 ```bash
 dify plugin package ./dify-plugin-shopify
 ```
+
+## Structured Output
+
+- 以下の json ファイルを dify に設定します。
+
+- [dify_output_schema.json](dify_output_schema.json)

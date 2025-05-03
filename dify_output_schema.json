@@ -1,0 +1,58 @@
+{
+  "name": "inventory_results",
+  "description": "商品検索の結果を返します。質問が商品の検索に関連しない場合は、任意のメッセージを返します。",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "response_message": {
+        "type": "string",
+        "description": "商品の検索に関連しない質問の場合は、ユーザーに返信するメッセージを含めることができます。そしてその他のプロパティは空でセットします。"
+      },
+      "product_title": {
+        "type": "array",
+        "description": "商品名",
+        "items": {
+          "type": "string"
+        }
+      },
+      "product_brand": {
+        "type": "array",
+        "description": "商品ブランド名",
+        "items": {
+          "type": "string"
+        }
+      },
+      "store_url": {
+        "type": "array",
+        "description": "online store url（存在しない場合はnullと返します。）",
+        "items": {
+          "type": "string"
+        }
+      },
+      "stock_quantity": {
+        "type": "array",
+        "description": "在庫数",
+        "items": {
+          "type": "number"
+        }
+      },
+      "product_img_url": {
+        "type": "array",
+        "description": "画像のURL",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "response_message",
+      "product_title",
+      "product_brand",
+      "store_url",
+      "stock_quantity",
+      "product_img_url"
+    ],
+    "additionalProperties": false
+  }
+}
