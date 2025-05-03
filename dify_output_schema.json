@@ -18,7 +18,7 @@
       },
       "product_brand": {
         "type": "array",
-        "description": "商品ブランド名",
+        "description": "商品ブランド名（vendor）",
         "items": {
           "type": "string"
         }
