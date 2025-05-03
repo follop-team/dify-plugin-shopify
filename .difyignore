@@ -179,3 +179,4 @@ Thumbs.db
 
 _assets/screenshots/
 .github/
+dify_output_schema.json
