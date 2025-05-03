@@ -18,6 +18,11 @@ query searchProducts($query: String!, $first: Int) {
           description
           onlineStoreUrl
           totalInventory
+          priceRange {
+            maxVariantPrice {
+                amount
+            }
+          }
           createdAt
           updatedAt
           featuredImage {
