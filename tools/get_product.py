@@ -13,6 +13,7 @@ query searchProducts($query: String!, $first: Int) {
       node {
         ... on Product {
           id
+          vendor
           title
           description
           onlineStoreUrl
